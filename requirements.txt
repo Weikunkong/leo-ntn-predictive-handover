@@ -1,0 +1,8 @@
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+pyyaml>=6.0
+sgp4>=2.22
+pytest>=7.0
+pytest-cov>=4.0

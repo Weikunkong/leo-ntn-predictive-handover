@@ -1,0 +1,78 @@
+# Quick-start scenario: small synthetic Walker-delta constellation, 10 simulated minutes, 3 seeds.
+# Runs in a few minutes on a laptop CPU. All physical parameters are documented in docs/methodology.md.
+name: quickstart
+
+constellation:
+  type: walker_delta          # synthetic constellation propagated with SGP4 (mean elements)
+  altitude_km: 550.0
+  inclination_deg: 53.0
+  n_planes: 24
+  sats_per_plane: 24          # 576 satellites (a thinned Starlink-shell-1-like geometry)
+  phasing: 1
+  epoch_utc: "2026-01-01T00:00:00"
+
+ue:
+  lat_deg: 49.57              # Erlangen, Germany
+  lon_deg: 11.03
+  alt_m: 300.0
+  speed_mps: 0.0              # static user (set e.g. 30.0 for a vehicle)
+  heading_deg: 90.0
+  randomize_longitude: true   # each seed: random longitude -> random constellation phase at the same latitude
+  randomize_start_time: true  # each seed: random start within one orbital period
+
+time:
+  duration_s: 600.0
+  step_s: 0.2                 # measurement / decision period (L3 sample every 200 ms)
+  geometry_step_s: 1.0        # SGP4 propagation grid; geometry is interpolated to step_s
+  tail_s: 900.0               # extra propagated time so that look-ahead near the end is defined
+
+link:                         # 3GPP TR 38.821 Set-1 LEO-600 S-band satellite, handheld UE
+  carrier_hz: 2.0e9
+  eirp_density_dbw_per_mhz: 34.0
+  ue_antenna_gain_dbi: 0.0
+  ue_noise_figure_db: 7.0
+  ue_antenna_temp_k: 290.0
+  extra_losses_db: 0.3        # aggregate atmospheric / implementation margin (configurable)
+  min_elevation_deg: 25.0     # candidate (service) elevation mask
+
+channel:                      # simplified TR 38.811-based large-scale model (S-band tables)
+  environment: suburban       # dense_urban | urban | suburban
+  enable_blockage: true       # LOS/NLOS Markov blockage with TR 38.811 LOS probability + clutter loss
+  enable_shadowing: true      # AR(1) shadow fading with TR 38.811 sigma
+  nlos_mean_duration_s: 4.0
+  shadow_decorr_time_s: 2.0
+
+measurement:
+  noise_std_db: 1.0           # per-sample measurement error (before L3 filtering)
+  l3_filter_k: 4              # TS 38.331 filterCoefficient (a = 1/2^(k/4) = 0.5)
+
+handover:
+  snr_min_db: 0.0             # usable-link threshold (service proxy)
+  execution_delay_s: 0.15     # handover execution interruption (abstraction of HO + random access)
+  link_loss_timeout_s: 1.0    # time below threshold before the link is declared lost (RLF proxy)
+  recovery_delay_s: 0.5       # re-connection delay after a link loss (re-establishment proxy)
+  pingpong_window_s: 10.0
+  algorithms: [greedy, a3, maxvis, predictive]
+  params:
+    greedy: {tolerance_db: 0.0}
+    a3: {hysteresis_db: 3.0, ttt_s: 0.4}
+    maxvis: {guard_time_s: 5.0}
+    predictive:
+      horizon_s: 20.0
+      n_samples: 5
+      margin_db: 2.0
+      bias_alpha: 0.2
+      bias_decay_s: 10.0
+      snr_cap_db: 20.0
+      outage_penalty_db: 20.0
+      eligibility_margin_db: 1.0
+      use_bias_correction: true
+
+ephemeris:
+  timing_error_s: 0.0         # along-track timing (stale ephemeris) error seen by the UE
+  max_lookahead_s: 900.0
+
+evaluation:
+  seeds: [0, 1, 2]
+  se_cap_bits_per_hz: 5.5
+  confidence: 0.95
