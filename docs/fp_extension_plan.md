@@ -56,8 +56,8 @@ assumes a specific supervisor, topic or ECTS value.
 * Comparison with a learning-based rule (e.g. a tabular Q-learning or small
   DQN baseline re-implemented from the literature) to quantify what the
   lightweight rule gives up. *≈ 50–80 h.*
-* MATLAB cross-validation of the decision rule on exported traces (the
-  repository already contains a MATLAB link-budget cross-check). *≈ 10–15 h.*
+* MATLAB cross-validation of the link budget and of the decision rule on
+  exported traces. *≈ 10–15 h.*
 
 ### Out of scope for a 300-h FP (would need a thesis or more)
 

@@ -310,9 +310,8 @@ leo-ntn-predictive-handover/
 ├── tests/                   37 unit / integration tests (pytest)
 ├── results/                 committed CSV summaries, figures and provenance of the runs reported here
 ├── data/README.md           how to use CelesTrak TLE/OMM files (data/cache is generated, git-ignored)
-├── matlab/link_budget_check.m   independent MATLAB/Octave cross-check of the link budget
 ├── docs/                    methodology.md, assumptions.md, literature_review.md, reproducibility.md,
-│                            mini_research_proposal.md (+ .pdf), fp_extension_plan.md, project_summary_en.md, email_de.md
+│                            fp_extension_plan.md, project_summary_en.md
 └── .github/workflows/tests.yml  CI: pytest + quick-start smoke run (Python 3.10, 3.12)
 ```
 

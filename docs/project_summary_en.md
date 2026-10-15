@@ -19,4 +19,4 @@ Handover is one of the critical mobility-management problems of LEO non-terrestr
 * communication-system modelling and algorithm design (handover decision rules, filtering, prediction with uncertainty);
 * scientific experiment design: baselines, ablations, parameter sweeps, Monte Carlo with paired confidence intervals, honest reporting of trade-offs;
 * research software engineering in Python: modular package, typed interfaces, configuration-driven experiments, unit tests, CI, documentation;
-* complementary background: MATLAB for communication-system simulation (link-budget cross-check script included) and VHDL/FPGA RTL design with hardware validation from laboratory projects.
+* complementary background: MATLAB for communication-system simulation and VHDL/FPGA RTL design with hardware validation from laboratory projects.

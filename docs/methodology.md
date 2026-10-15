@@ -75,8 +75,7 @@ G/T = G_UE − 10 log10( T_ant + (F − 1) · 290 K )                       [dB/
 with EIRP density 34 dBW/MHz, UE gain 0 dBi, noise figure 7 dB, antenna
 temperature 290 K (G/T = −31.6 dB/K) and carrier 2 GHz. This yields 16.9 dB at
 nadir (600 km) and 6.8 dB at the 1932-km maximum slant range of the LEO-600
-scenario (10° elevation). `tests/test_channel.py` and
-`matlab/link_budget_check.m` assert these numbers. Not modelled: inter-beam /
+scenario (10° elevation). `tests/test_channel.py` asserts these numbers. Not modelled: inter-beam /
 inter-satellite interference (the quantity is an SNR, not a SINR), satellite
 antenna roll-off (ideal beam steering, maximum gain), polarisation loss;
 atmospheric and scintillation losses are an aggregate constant `extra_losses_db`.
