@@ -10,7 +10,6 @@ from leo_ntn_handover.handover import (
     build_algorithm,
 )
 from leo_ntn_handover.simulation.ephemeris import EphemerisOracle
-from tests.conftest import make_trace
 
 
 def obs(serving: int, meas: list[float], t: float = 0.0, step: float = 1.0) -> Observation:

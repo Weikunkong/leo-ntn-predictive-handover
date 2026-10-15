@@ -12,7 +12,7 @@ from __future__ import annotations
 import math
 from datetime import datetime, timezone
 
-from sgp4.api import Satrec, WGS72, jday
+from sgp4.api import WGS72, Satrec, jday
 
 from ..constants import EARTH_RADIUS_KM, JD_1949_12_31, MU_EARTH_KM3_S2
 

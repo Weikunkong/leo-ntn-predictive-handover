@@ -18,8 +18,8 @@
 
 ## Provenance
 
-Every experiment script writes `provenance.json` next to its CSV files with the
-package version, Python/NumPy/SciPy/pandas/matplotlib/sgp4 versions, platform,
+Every experiment script writes `provenance_<experiment>.json` next to its CSV
+files with the package version, Python/NumPy/SciPy/pandas/matplotlib/sgp4 versions, platform,
 command line, seeds and the full resolved configuration.
 
 ## Commands
@@ -46,12 +46,12 @@ Measured in the development environment (2 vCPU container, Python 3.13):
 |---|---|
 | `python -m pytest` | ≈ 8 s |
 | `run_quickstart.py` (576 satellites, 3 seeds × 10 min, 7 rules) | ≈ 10 s |
-| `run_comparison.py` (1584 satellites, 20 seeds × 30 min, 7 rules, 2 workers) | see `results/main/log_comparison.txt` |
-| `run_sensitivity.py` (all sweeps, 20 seeds, 2 workers) | see `results/main/log_sensitivity.txt` |
+| `run_comparison.py` (1584 satellites, 20 seeds × 30 min, 7 rules, 2 workers) | ≈ 3 min geometry (once, cached) + ≈ 2.5 min runs |
+| `run_sensitivity.py` (all eight sweeps, 20 seeds, 2 workers) | ≈ 40 min (≈ 1 s per predictive run of 9000 steps; A3/greedy 0.1–0.4 s) |
 
 A laptop with 4–8 cores runs the complete set in well under an hour.
 
 ## Versions
 
 Pinned lower bounds are in `pyproject.toml`; the exact versions used for the
-committed results are in `results/*/provenance.json`.
+committed results are in `results/*/provenance_*.json`.

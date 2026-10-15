@@ -51,8 +51,9 @@ def load(args: argparse.Namespace) -> tuple[SimConfig, list[int], Path]:
     return cfg, seeds, out
 
 
-def write_provenance(out: Path, cfg: SimConfig, seeds: list[int], extra: dict | None = None) -> None:
-    """Record software versions, config and seeds next to the results."""
+def write_provenance(out: Path, cfg: SimConfig, seeds: list[int], extra: dict | None = None,
+                     name: str = "provenance") -> None:
+    """Record software versions, config and seeds next to the results (``<out>/<name>.json``)."""
     import matplotlib
     import numpy
     import scipy
@@ -70,7 +71,7 @@ def write_provenance(out: Path, cfg: SimConfig, seeds: list[int], extra: dict | 
     }
     if extra:
         info.update(extra)
-    with open(out / "provenance.json", "w") as fh:
+    with open(out / f"{name}.json", "w") as fh:
         json.dump(info, fh, indent=2, default=str)
 
 

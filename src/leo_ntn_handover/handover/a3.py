@@ -11,8 +11,6 @@ preparation.
 
 from __future__ import annotations
 
-import numpy as np
-
 from ..simulation.ephemeris import EphemerisOracle
 from .base import HandoverAlgorithm, Observation
 

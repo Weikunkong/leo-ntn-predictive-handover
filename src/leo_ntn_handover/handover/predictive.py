@@ -82,7 +82,8 @@ class PredictiveHandover(HandoverAlgorithm):
         out = np.zeros(len(obs.candidates))
         for pos, sat in enumerate(obs.candidates.tolist()):
             prev = self._bias.get(sat)
-            b = float(resid[pos]) if prev is None else (1.0 - self.bias_alpha) * prev + self.bias_alpha * float(resid[pos])
+            r = float(resid[pos])
+            b = r if prev is None else (1.0 - self.bias_alpha) * prev + self.bias_alpha * r
             new_bias[sat] = b
             out[pos] = b
         self._bias = new_bias

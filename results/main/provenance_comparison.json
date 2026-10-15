@@ -1,0 +1,284 @@
+{
+  "timestamp": "2026-10-15T19:57:07",
+  "package_version": "0.1.0",
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "pandas": "3.0.5",
+  "matplotlib": "3.11.2",
+  "sgp4": "2.27",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "command": "-",
+  "config": {
+    "name": "starlink_like",
+    "constellation": {
+      "type": "walker_delta",
+      "altitude_km": 550.0,
+      "inclination_deg": 53.0,
+      "n_planes": 72,
+      "sats_per_plane": 22,
+      "phasing": 1,
+      "epoch_utc": "2026-01-01T00:00:00",
+      "file": null,
+      "name_filter": null,
+      "max_sats": null
+    },
+    "ue": {
+      "lat_deg": 49.57,
+      "lon_deg": 11.03,
+      "alt_m": 300.0,
+      "speed_mps": 0.0,
+      "heading_deg": 90.0,
+      "randomize_longitude": true,
+      "randomize_start_time": true
+    },
+    "time": {
+      "duration_s": 1800.0,
+      "step_s": 0.2,
+      "geometry_step_s": 1.0,
+      "tail_s": 900.0
+    },
+    "link": {
+      "carrier_hz": 2000000000.0,
+      "eirp_density_dbw_per_mhz": 34.0,
+      "ue_antenna_gain_dbi": 0.0,
+      "ue_noise_figure_db": 7.0,
+      "ue_antenna_temp_k": 290.0,
+      "extra_losses_db": 0.3,
+      "min_elevation_deg": 25.0
+    },
+    "channel": {
+      "environment": "suburban",
+      "enable_blockage": true,
+      "enable_shadowing": true,
+      "nlos_mean_duration_s": 4.0,
+      "shadow_decorr_time_s": 2.0
+    },
+    "measurement": {
+      "noise_std_db": 1.0,
+      "l3_filter_k": 4
+    },
+    "handover": {
+      "snr_min_db": 0.0,
+      "execution_delay_s": 0.15,
+      "link_loss_timeout_s": 1.0,
+      "recovery_delay_s": 0.5,
+      "pingpong_window_s": 10.0,
+      "algorithms": [
+        "greedy",
+        "a3",
+        "maxvis",
+        "predictive"
+      ],
+      "params": {
+        "greedy": {
+          "tolerance_db": 0.0
+        },
+        "a3": {
+          "hysteresis_db": 3.0,
+          "ttt_s": 0.4
+        },
+        "maxvis": {
+          "guard_time_s": 5.0
+        },
+        "predictive": {
+          "horizon_s": 20.0,
+          "n_samples": 5,
+          "margin_db": 2.0,
+          "bias_alpha": 0.2,
+          "bias_decay_s": 10.0,
+          "snr_cap_db": 15.0,
+          "outage_penalty_db": 20.0,
+          "eligibility_margin_db": 1.0,
+          "use_bias_correction": true
+        }
+      }
+    },
+    "ephemeris": {
+      "timing_error_s": 0.0,
+      "max_lookahead_s": 900.0
+    },
+    "evaluation": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "se_cap_bits_per_hz": 5.5,
+      "confidence": 0.95
+    },
+    "sweeps": {
+      "timing_error": {
+        "path": "ephemeris.timing_error_s",
+        "values": [
+          -20.0,
+          -10.0,
+          -5.0,
+          -2.0,
+          -1.0,
+          0.0,
+          1.0,
+          2.0,
+          5.0,
+          10.0,
+          20.0
+        ],
+        "algorithms": [
+          "maxvis",
+          "predictive",
+          "predictive_nocorr"
+        ]
+      },
+      "measurement_noise": {
+        "path": "measurement.noise_std_db",
+        "values": [
+          0.0,
+          0.5,
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      "ho_delay": {
+        "path": "handover.execution_delay_s",
+        "values": [
+          0.05,
+          0.15,
+          0.3,
+          0.6,
+          1.0,
+          2.0
+        ]
+      },
+      "horizon": {
+        "path": "handover.params.predictive.horizon_s",
+        "values": [
+          0.0,
+          2.0,
+          5.0,
+          10.0,
+          20.0,
+          40.0,
+          80.0
+        ],
+        "algorithms": [
+          "predictive",
+          "predictive_nocorr"
+        ]
+      },
+      "environment": {
+        "path": "channel.environment",
+        "values": [
+          "suburban",
+          "urban",
+          "dense_urban"
+        ]
+      },
+      "density": {
+        "path": "constellation",
+        "values": [
+          {
+            "n_planes": 24,
+            "sats_per_plane": 24
+          },
+          {
+            "n_planes": 36,
+            "sats_per_plane": 22
+          },
+          {
+            "n_planes": 72,
+            "sats_per_plane": 22
+          }
+        ],
+        "labels": [
+          "576 sats",
+          "792 sats",
+          "1584 sats"
+        ]
+      },
+      "a3_tuning": {
+        "grid": {
+          "handover.params.a3.hysteresis_db": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            6.0
+          ],
+          "handover.params.a3.ttt_s": [
+            0.0,
+            0.2,
+            0.4,
+            1.0,
+            2.0
+          ]
+        },
+        "algorithms": [
+          "a3"
+        ]
+      },
+      "predictive_tuning": {
+        "grid": {
+          "handover.params.predictive.margin_db": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            6.0
+          ],
+          "handover.params.predictive.snr_cap_db": [
+            10.0,
+            15.0,
+            20.0
+          ]
+        },
+        "algorithms": [
+          "predictive"
+        ]
+      }
+    }
+  },
+  "experiment": "comparison",
+  "note": "regenerated provenance; the run finished 2026-10-15T19:12 local time, ~2.5 min on 2 vCPU with cached geometry"
+}

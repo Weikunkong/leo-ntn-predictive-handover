@@ -167,7 +167,7 @@ decision time per call (complexity proxy).
 * **Statistics.** Mean ± 95 % Student-t confidence interval over seeds;
   paired same-seed differences versus the proposed rule with paired t-test
   p-values (`comparison_paired.csv`).
-* **Sweeps** (`run_sensitivity.py`): ephemeris timing error 0–20 s,
+* **Sweeps** (`run_sensitivity.py`): ephemeris timing error −20 … +20 s,
   measurement noise 0–4 dB, execution delay 0.05–2 s, prediction horizon
   0–80 s, TR 38.811 environment, constellation size 576/792/1584; tuning grids
   for A3 (hysteresis × TTT) and the predictive rule (margin × cap) so that

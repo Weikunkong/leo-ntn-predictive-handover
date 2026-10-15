@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-15T19:12:36",
+  "timestamp": "2026-10-15T19:57:07",
   "package_version": "0.1.0",
   "python": "3.13.16",
   "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
@@ -30,7 +30,7 @@
     18,
     19
   ],
-  "command": "experiments/run_comparison.py --config configs/starlink_like.yaml --out results/main --workers 2",
+  "command": "-",
   "config": {
     "name": "starlink_like",
     "constellation": {
@@ -150,8 +150,12 @@
       "timing_error": {
         "path": "ephemeris.timing_error_s",
         "values": [
+          -20.0,
+          -10.0,
+          -5.0,
+          -2.0,
+          -1.0,
           0.0,
-          0.5,
           1.0,
           2.0,
           5.0,
@@ -275,5 +279,15 @@
       }
     }
   },
-  "experiment": "comparison"
+  "experiment": "sensitivity",
+  "sweeps": [
+    "measurement_noise",
+    "ho_delay",
+    "horizon",
+    "environment",
+    "density",
+    "a3_tuning",
+    "predictive_tuning"
+  ],
+  "note": "regenerated provenance; the sweeps ran 19:12-19:46 local time on 2 vCPU (timing_error re-run separately, 19:46-19:52)"
 }

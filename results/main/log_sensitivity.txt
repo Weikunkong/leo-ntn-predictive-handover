@@ -13,3 +13,314 @@
 [sweep timing_error] 10.0
   60 runs (20 seeds x 3 algorithms) in 39.4 s {'sweep': 'timing_error', 'level': 10.0, 'level_label': '10.0'}
 [sweep timing_error] 20.0
+  60 runs (20 seeds x 3 algorithms) in 36.2 s {'sweep': 'timing_error', 'level': 20.0, 'level_label': '20.0'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+        0.0               9.500             1.354               0.000             0.000             0.018           0.002                     35.700                    4.156                4.825              0.021                 0.086               0.051
+        0.0              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+        0.0              22.500             1.388               0.000             0.000             0.016           0.002                     29.900                    4.278                5.068              0.017                 0.000               0.000
+        0.5               9.600             1.444               0.000             0.000             0.018           0.002                     36.000                    4.086                4.826              0.022                 0.099               0.057
+        0.5              61.200             3.191               0.008             0.007             0.005           0.000                      0.000                    0.000                5.192              0.013                 0.000               0.000
+        0.5              22.600             1.428               0.000             0.000             0.016           0.002                     29.700                    4.330                5.071              0.017                 0.000               0.000
+        1.0               9.600             1.199               0.000             0.000             0.018           0.002                     36.200                    3.828                4.831              0.023                 0.119               0.073
+        1.0              61.300             3.289               0.007             0.006             0.005           0.000                      0.000                    0.000                5.194              0.012                 0.000               0.000
+        1.0              23.000             1.563               0.000             0.000             0.015           0.002                     29.500                    4.315                5.073              0.017                 0.000               0.000
+        2.0              10.000             1.176               0.000             0.000             0.018           0.002                     37.100                    4.000                4.831              0.023                 0.070               0.042
+        2.0              60.900             2.775               0.011             0.009             0.005           0.000                      0.000                    0.000                5.196              0.011                 0.000               0.000
+        2.0              23.100             1.471               0.000             0.000             0.016           0.001                     29.600                    4.059                5.077              0.017                 0.004               0.009
+        5.0              10.200             1.003               0.000             0.000             0.019           0.001                     37.200                    3.401                4.857              0.018                 0.062               0.049
+        5.0              61.900             3.442               0.014             0.010             0.005           0.000                      0.000                    0.000                5.204              0.013                 0.000               0.000
+        5.0              23.900             1.233               0.000             0.000             0.016           0.001                     30.700                    3.951                5.087              0.018                 0.000               0.000
+       10.0              11.100             1.471               0.000             0.000             0.019           0.001                     37.700                    3.261                4.865              0.025                 0.087               0.070
+       10.0              62.100             2.656               0.013             0.009             0.005           0.000                      0.000                    0.000                5.213              0.011                 0.000               0.000
+       10.0              25.700             1.557               0.000             0.000             0.015           0.001                     29.200                    3.573                5.109              0.015                 0.004               0.007
+       20.0              13.400             1.923               0.000             0.000             0.018           0.001                     36.400                    3.016                4.872              0.021                 0.040               0.038
+       20.0              62.500             3.461               0.003             0.005             0.005           0.000                      0.000                    0.000                5.230              0.015                 0.000               0.000
+       20.0              28.600             1.610               0.000             0.000             0.015           0.001                     28.600                    3.383                5.140              0.017                 0.004               0.007
+
+=== sweep 'measurement_noise' (20 seeds) ===
+[sweep measurement_noise] 0.0
+  80 runs (20 seeds x 4 algorithms) in 29.9 s {'sweep': 'measurement_noise', 'level': 0.0, 'level_label': '0.0'}
+[sweep measurement_noise] 0.5
+  80 runs (20 seeds x 4 algorithms) in 31.3 s {'sweep': 'measurement_noise', 'level': 0.5, 'level_label': '0.5'}
+[sweep measurement_noise] 1.0
+  80 runs (20 seeds x 4 algorithms) in 33.2 s {'sweep': 'measurement_noise', 'level': 1.0, 'level_label': '1.0'}
+[sweep measurement_noise] 2.0
+  80 runs (20 seeds x 4 algorithms) in 43.6 s {'sweep': 'measurement_noise', 'level': 2.0, 'level_label': '2.0'}
+[sweep measurement_noise] 3.0
+  80 runs (20 seeds x 4 algorithms) in 52.0 s {'sweep': 'measurement_noise', 'level': 3.0, 'level_label': '3.0'}
+[sweep measurement_noise] 4.0
+  80 runs (20 seeds x 4 algorithms) in 47.1 s {'sweep': 'measurement_noise', 'level': 4.0, 'level_label': '4.0'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+        0.0            2990.900            40.706               0.411             0.006             0.125           0.002                      0.000                    0.000                4.811              0.009                 0.000               0.000
+        0.0             234.700            10.078               0.097             0.010             0.012           0.000                      0.000                    0.000                5.340              0.005                 0.000               0.000
+        0.0               8.900             1.115               0.000             0.000             0.018           0.001                     35.500                    2.101                4.853              0.022                 0.113               0.064
+        0.0              60.700             2.995               0.008             0.007             0.005           0.000                      0.000                    0.000                5.190              0.012                 0.000               0.000
+        0.5            4017.200            47.899               0.458             0.006             0.167           0.002                      0.000                    0.000                4.575              0.011                 0.000               0.000
+        0.5             243.800            10.136               0.093             0.010             0.012           0.001                      0.000                    0.000                5.337              0.006                 0.000               0.000
+        0.5               9.100             0.935               0.000             0.000             0.017           0.001                     34.400                    2.709                4.845              0.025                 0.106               0.060
+        0.5              61.200             2.997               0.007             0.007             0.005           0.000                      0.000                    0.000                5.187              0.016                 0.000               0.000
+        1.0            5726.100            63.166               0.455             0.005             0.239           0.003                      0.000                    0.000                4.181              0.015                 0.000               0.000
+        1.0             263.500            10.489               0.095             0.009             0.013           0.001                      0.100                    0.209                5.336              0.007                 0.000               0.000
+        1.0               9.500             1.354               0.000             0.000             0.018           0.002                     35.700                    4.156                4.825              0.021                 0.086               0.051
+        1.0              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+        2.0            8476.100            59.949               0.353             0.005             0.353           0.003                      0.100                    0.209                3.537              0.014                 0.000               0.000
+        2.0             408.100            16.891               0.113             0.008             0.019           0.001                      0.000                    0.000                5.305              0.007                 0.000               0.001
+        2.0               9.100             1.233               0.000             0.000             0.018           0.002                     36.100                    4.458                4.831              0.025                 0.089               0.062
+        2.0              62.300             3.189               0.009             0.008             0.005           0.000                      0.000                    0.000                5.198              0.016                 0.000               0.000
+        3.0           10203.200            51.959               0.267             0.004             0.425           0.002                      0.100                    0.209                3.119              0.012                 0.000               0.000
+        3.0             697.900            16.734               0.148             0.008             0.031           0.001                      0.000                    0.000                5.234              0.007                 0.000               0.000
+        3.0               9.900             1.533               0.000             0.000             0.018           0.001                     37.200                    3.162                4.815              0.027                 0.081               0.066
+        3.0              66.000             3.606               0.013             0.011             0.005           0.000                      0.100                    0.209                5.199              0.016                 0.000               0.000
+        4.0           11308.400            46.867               0.212             0.003             0.471           0.002                      0.500                    0.416                2.840              0.011                 0.000               0.000
+        4.0            1104.100            21.318               0.144             0.006             0.048           0.001                      0.000                    0.000                5.121              0.007                 0.000               0.000
+        4.0              10.200             1.485               0.000             0.000             0.019           0.001                     38.000                    2.559                4.798              0.034                 0.086               0.056
+        4.0              65.600             3.677               0.006             0.007             0.005           0.000                      0.200                    0.288                5.210              0.018                 0.000               0.000
+
+=== sweep 'ho_delay' (20 seeds) ===
+[sweep ho_delay] 0.05
+  80 runs (20 seeds x 4 algorithms) in 33.5 s {'sweep': 'ho_delay', 'level': 0.05, 'level_label': '0.05'}
+[sweep ho_delay] 0.15
+  80 runs (20 seeds x 4 algorithms) in 32.8 s {'sweep': 'ho_delay', 'level': 0.15, 'level_label': '0.15'}
+[sweep ho_delay] 0.3
+  80 runs (20 seeds x 4 algorithms) in 31.8 s {'sweep': 'ho_delay', 'level': 0.3, 'level_label': '0.3'}
+[sweep ho_delay] 0.6
+  80 runs (20 seeds x 4 algorithms) in 31.1 s {'sweep': 'ho_delay', 'level': 0.6, 'level_label': '0.6'}
+[sweep ho_delay] 1.0
+  80 runs (20 seeds x 4 algorithms) in 29.4 s {'sweep': 'ho_delay', 'level': 1.0, 'level_label': '1.0'}
+[sweep ho_delay] 2.0
+  80 runs (20 seeds x 4 algorithms) in 29.6 s {'sweep': 'ho_delay', 'level': 2.0, 'level_label': '2.0'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+       0.05            5726.100            63.166               0.455             0.005             0.080           0.001                      0.000                    0.000                5.052              0.005                 0.000               0.000
+       0.05             263.500            10.489               0.095             0.009             0.006           0.000                      0.100                    0.209                5.376              0.005                 0.000               0.000
+       0.05               9.500             1.354               0.000             0.000             0.017           0.002                     35.700                    4.156                4.826              0.021                 0.086               0.051
+       0.05              60.800             2.903               0.010             0.009             0.003           0.000                      0.000                    0.000                5.200              0.012                 0.000               0.000
+       0.15            5726.100            63.166               0.455             0.005             0.239           0.003                      0.000                    0.000                4.181              0.015                 0.000               0.000
+       0.15             263.500            10.489               0.095             0.009             0.013           0.001                      0.100                    0.209                5.336              0.007                 0.000               0.000
+       0.15               9.500             1.354               0.000             0.000             0.018           0.002                     35.700                    4.156                4.825              0.021                 0.086               0.051
+       0.15              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+        0.3            5721.000            63.425               0.455             0.005             0.405           0.004                      0.000                    0.000                3.266              0.024                 0.001               0.000
+        0.3             263.500            10.489               0.095             0.009             0.024           0.001                      0.100                    0.209                5.276              0.009                 0.000               0.000
+        0.3               9.400             1.395               0.000             0.000             0.018           0.002                     36.100                    4.202                4.826              0.022                 0.063               0.047
+        0.3              60.800             2.903               0.010             0.009             0.008           0.001                      0.000                    0.000                5.178              0.012                 0.000               0.000
+        0.6            3890.000            43.492               0.394             0.006             0.611           0.007                      0.000                    0.000                2.139              0.036                 0.002               0.000
+        0.6             263.000            10.812               0.095             0.009             0.046           0.002                      0.100                    0.209                5.157              0.014                 0.001               0.001
+        0.6               9.100             1.502               0.000             0.000             0.019           0.002                     36.200                    4.207                4.831              0.023                 0.112               0.063
+        0.6              60.700             2.853               0.010             0.009             0.013           0.001                      0.000                    0.000                5.151              0.013                 0.002               0.003
+        1.0            2695.700            21.552               0.338             0.006             0.741           0.006                      0.000                    0.000                1.425              0.032                 0.005               0.001
+        1.0             261.900            10.522               0.095             0.009             0.075           0.003                      0.000                    0.000                4.999              0.020                 0.005               0.003
+        1.0               9.200             1.500               0.000             0.000             0.020           0.002                     37.000                    4.322                4.823              0.022                 0.092               0.058
+        1.0              60.500             3.020               0.007             0.006             0.019           0.001                      0.000                    0.000                5.115              0.013                 0.008               0.009
+        2.0            1584.100             9.620               0.282             0.010             0.877           0.005                      0.000                    0.000                0.677              0.028                 0.012               0.001
+        2.0             252.600            10.370               0.090             0.011             0.143           0.006                      0.000                    0.000                4.632              0.035                 0.018               0.005
+        2.0               9.100             1.407               0.000             0.000             0.023           0.002                     36.400                    4.386                4.811              0.025                 0.088               0.061
+        2.0              59.800             3.212               0.005             0.006             0.036           0.002                      0.000                    0.000                5.029              0.017                 0.006               0.006
+
+=== sweep 'horizon' (20 seeds) ===
+[sweep horizon] 0.0
+  40 runs (20 seeds x 2 algorithms) in 29.4 s {'sweep': 'horizon', 'level': 0.0, 'level_label': '0.0'}
+[sweep horizon] 2.0
+  40 runs (20 seeds x 2 algorithms) in 32.4 s {'sweep': 'horizon', 'level': 2.0, 'level_label': '2.0'}
+[sweep horizon] 5.0
+  40 runs (20 seeds x 2 algorithms) in 31.7 s {'sweep': 'horizon', 'level': 5.0, 'level_label': '5.0'}
+[sweep horizon] 10.0
+  40 runs (20 seeds x 2 algorithms) in 33.0 s {'sweep': 'horizon', 'level': 10.0, 'level_label': '10.0'}
+[sweep horizon] 20.0
+  40 runs (20 seeds x 2 algorithms) in 32.4 s {'sweep': 'horizon', 'level': 20.0, 'level_label': '20.0'}
+[sweep horizon] 40.0
+  40 runs (20 seeds x 2 algorithms) in 32.3 s {'sweep': 'horizon', 'level': 40.0, 'level_label': '40.0'}
+[sweep horizon] 80.0
+  40 runs (20 seeds x 2 algorithms) in 31.2 s {'sweep': 'horizon', 'level': 80.0, 'level_label': '80.0'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+        0.0              83.500             5.566               0.026             0.010             0.004           0.000                      0.100                    0.209                5.217              0.012                 0.000               0.000
+        0.0              19.400             1.180               0.000             0.000             0.016           0.001                     31.100                    3.361                5.012              0.016                 0.000               0.000
+        2.0              77.300             4.899               0.020             0.008             0.004           0.000                      0.000                    0.000                5.210              0.013                 0.000               0.000
+        2.0              19.900             1.195               0.000             0.000             0.016           0.002                     31.500                    4.073                5.015              0.015                 0.006               0.013
+        5.0              72.700             4.497               0.016             0.010             0.004           0.000                      0.000                    0.000                5.202              0.014                 0.000               0.000
+        5.0              20.200             1.211               0.000             0.000             0.016           0.002                     31.500                    3.923                5.024              0.014                 0.007               0.015
+       10.0              67.500             3.668               0.013             0.007             0.005           0.000                      0.000                    0.000                5.189              0.013                 0.000               0.000
+       10.0              20.900             1.407               0.000             0.000             0.016           0.002                     30.900                    4.289                5.037              0.016                 0.000               0.000
+       20.0              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+       20.0              22.500             1.388               0.000             0.000             0.016           0.002                     29.900                    4.278                5.068              0.017                 0.000               0.000
+       40.0              56.500             3.065               0.005             0.006             0.007           0.001                      1.200                    0.706                5.213              0.011                 0.000               0.000
+       40.0              25.200             1.437               0.000             0.000             0.016           0.001                     29.400                    3.867                5.117              0.013                 0.000               0.000
+       80.0              51.500             3.110               0.000             0.000             0.008           0.001                      5.200                    1.954                5.244              0.012                 0.000               0.000
+       80.0              34.600             1.395               0.000             0.000             0.016           0.001                     27.800                    3.005                5.195              0.011                 0.000               0.000
+
+=== sweep 'environment' (20 seeds) ===
+[sweep environment] suburban
+  80 runs (20 seeds x 4 algorithms) in 32.7 s {'sweep': 'environment', 'level': 'suburban', 'level_label': 'suburban'}
+[sweep environment] urban
+  80 runs (20 seeds x 4 algorithms) in 30.3 s {'sweep': 'environment', 'level': 'urban', 'level_label': 'urban'}
+[sweep environment] dense_urban
+  80 runs (20 seeds x 4 algorithms) in 32.3 s {'sweep': 'environment', 'level': 'dense_urban', 'level_label': 'dense_urban'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+   suburban            5726.100            63.166               0.455             0.005             0.239           0.003                      0.000                    0.000                4.181              0.015                 0.000               0.000
+   suburban             263.500            10.489               0.095             0.009             0.013           0.001                      0.100                    0.209                5.336              0.007                 0.000               0.000
+   suburban               9.500             1.354               0.000             0.000             0.018           0.002                     35.700                    4.156                4.825              0.021                 0.086               0.051
+   suburban              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+      urban            4353.700            31.940               0.311             0.004             0.182           0.001                      1.600                    1.078                4.495              0.007                 0.000               0.000
+      urban            1235.100            19.251               0.103             0.005             0.074           0.001                      0.800                    0.560                4.986              0.007                 0.001               0.000
+      urban               0.600             0.440               0.000             0.000             0.067           0.003                    165.800                    7.154                4.639              0.021                 0.500               0.575
+      urban             198.700            10.087               0.047             0.007             0.024           0.001                      2.600                    1.327                4.927              0.012                 0.008               0.004
+dense_urban            4507.500            55.166               0.336             0.004             0.188           0.002                      1.500                    0.736                4.446              0.013                 0.000               0.000
+dense_urban            1090.700            15.581               0.101             0.007             0.079           0.002                      1.000                    0.644                4.870              0.011                 0.000               0.000
+dense_urban               2.200             1.320               0.000             0.000             0.142           0.004                    321.600                    9.918                4.309              0.022                 0.694               0.281
+dense_urban             417.300            13.363               0.063             0.008             0.052           0.002                      1.900                    0.711                4.873              0.013                 0.010               0.003
+
+=== sweep 'density' (20 seeds) ===
+[sweep density] 576 sats
+  80 runs (20 seeds x 4 algorithms) in 48.8 s {'sweep': 'density', 'level': "{'n_planes': 24, 'sats_per_plane': 24}", 'level_label': '576 sats'}
+[sweep density] 792 sats
+  80 runs (20 seeds x 4 algorithms) in 62.9 s {'sweep': 'density', 'level': "{'n_planes': 36, 'sats_per_plane': 22}", 'level_label': '792 sats'}
+[sweep density] 1584 sats
+  80 runs (20 seeds x 4 algorithms) in 35.7 s {'sweep': 'density', 'level': "{'n_planes': 72, 'sats_per_plane': 22}", 'level_label': '1584 sats'}
+level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+   576 sats            3790.800            47.950               0.650             0.007             0.158           0.002                      0.000                    0.000                4.561              0.011                 0.000               0.000
+   576 sats             191.000            10.518               0.172             0.022             0.011           0.001                      0.100                    0.209                5.235              0.007                 0.000               0.000
+   576 sats               9.600             1.274               0.000             0.000             0.017           0.001                     34.000                    3.619                4.818              0.020                 0.036               0.036
+   576 sats              68.700             3.735               0.013             0.008             0.006           0.000                      0.100                    0.209                5.137              0.010                 0.000               0.000
+   792 sats            4275.700            66.116               0.604             0.009             0.178           0.003                      0.000                    0.000                4.486              0.015                 0.000               0.000
+   792 sats             220.300             9.547               0.150             0.013             0.012           0.001                      0.000                    0.000                5.282              0.007                 0.000               0.000
+   792 sats               9.500             1.515               0.000             0.000             0.019           0.002                     37.300                    3.519                4.826              0.026                 0.047               0.046
+   792 sats              66.300             4.899               0.012             0.009             0.006           0.001                      0.000                    0.000                5.165              0.013                 0.000               0.000
+  1584 sats            5726.100            63.166               0.455             0.005             0.239           0.003                      0.000                    0.000                4.181              0.015                 0.000               0.000
+  1584 sats             263.500            10.489               0.095             0.009             0.013           0.001                      0.100                    0.209                5.336              0.007                 0.000               0.000
+  1584 sats               9.500             1.354               0.000             0.000             0.018           0.002                     35.700                    4.156                4.825              0.021                 0.086               0.051
+  1584 sats              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+
+=== sweep 'a3_tuning' (20 seeds) ===
+[sweep a3_tuning] hysteresis_db=1.0, ttt_s=0.0
+  20 runs (20 seeds x 1 algorithms) in 17.2 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=1.0, ttt_s=0.0', 'level_label': 'hysteresis_db=1.0, ttt_s=0.0'}
+[sweep a3_tuning] hysteresis_db=1.0, ttt_s=0.2
+  20 runs (20 seeds x 1 algorithms) in 22.1 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=1.0, ttt_s=0.2', 'level_label': 'hysteresis_db=1.0, ttt_s=0.2'}
+[sweep a3_tuning] hysteresis_db=1.0, ttt_s=0.4
+  20 runs (20 seeds x 1 algorithms) in 16.2 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=1.0, ttt_s=0.4', 'level_label': 'hysteresis_db=1.0, ttt_s=0.4'}
+[sweep a3_tuning] hysteresis_db=1.0, ttt_s=1.0
+  20 runs (20 seeds x 1 algorithms) in 17.2 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=1.0, ttt_s=1.0', 'level_label': 'hysteresis_db=1.0, ttt_s=1.0'}
+[sweep a3_tuning] hysteresis_db=1.0, ttt_s=2.0
+  20 runs (20 seeds x 1 algorithms) in 16.0 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=1.0, ttt_s=2.0', 'level_label': 'hysteresis_db=1.0, ttt_s=2.0'}
+[sweep a3_tuning] hysteresis_db=2.0, ttt_s=0.0
+  20 runs (20 seeds x 1 algorithms) in 17.3 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=2.0, ttt_s=0.0', 'level_label': 'hysteresis_db=2.0, ttt_s=0.0'}
+[sweep a3_tuning] hysteresis_db=2.0, ttt_s=0.2
+  20 runs (20 seeds x 1 algorithms) in 16.4 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=2.0, ttt_s=0.2', 'level_label': 'hysteresis_db=2.0, ttt_s=0.2'}
+[sweep a3_tuning] hysteresis_db=2.0, ttt_s=0.4
+  20 runs (20 seeds x 1 algorithms) in 16.7 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=2.0, ttt_s=0.4', 'level_label': 'hysteresis_db=2.0, ttt_s=0.4'}
+[sweep a3_tuning] hysteresis_db=2.0, ttt_s=1.0
+  20 runs (20 seeds x 1 algorithms) in 15.7 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=2.0, ttt_s=1.0', 'level_label': 'hysteresis_db=2.0, ttt_s=1.0'}
+[sweep a3_tuning] hysteresis_db=2.0, ttt_s=2.0
+  20 runs (20 seeds x 1 algorithms) in 14.6 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=2.0, ttt_s=2.0', 'level_label': 'hysteresis_db=2.0, ttt_s=2.0'}
+[sweep a3_tuning] hysteresis_db=3.0, ttt_s=0.0
+  20 runs (20 seeds x 1 algorithms) in 15.8 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=3.0, ttt_s=0.0', 'level_label': 'hysteresis_db=3.0, ttt_s=0.0'}
+[sweep a3_tuning] hysteresis_db=3.0, ttt_s=0.2
+  20 runs (20 seeds x 1 algorithms) in 16.1 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=3.0, ttt_s=0.2', 'level_label': 'hysteresis_db=3.0, ttt_s=0.2'}
+[sweep a3_tuning] hysteresis_db=3.0, ttt_s=0.4
+  20 runs (20 seeds x 1 algorithms) in 15.4 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=3.0, ttt_s=0.4', 'level_label': 'hysteresis_db=3.0, ttt_s=0.4'}
+[sweep a3_tuning] hysteresis_db=3.0, ttt_s=1.0
+  20 runs (20 seeds x 1 algorithms) in 15.7 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=3.0, ttt_s=1.0', 'level_label': 'hysteresis_db=3.0, ttt_s=1.0'}
+[sweep a3_tuning] hysteresis_db=3.0, ttt_s=2.0
+  20 runs (20 seeds x 1 algorithms) in 15.4 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=3.0, ttt_s=2.0', 'level_label': 'hysteresis_db=3.0, ttt_s=2.0'}
+[sweep a3_tuning] hysteresis_db=4.0, ttt_s=0.0
+  20 runs (20 seeds x 1 algorithms) in 16.6 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=4.0, ttt_s=0.0', 'level_label': 'hysteresis_db=4.0, ttt_s=0.0'}
+[sweep a3_tuning] hysteresis_db=4.0, ttt_s=0.2
+  20 runs (20 seeds x 1 algorithms) in 16.3 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=4.0, ttt_s=0.2', 'level_label': 'hysteresis_db=4.0, ttt_s=0.2'}
+[sweep a3_tuning] hysteresis_db=4.0, ttt_s=0.4
+  20 runs (20 seeds x 1 algorithms) in 15.4 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=4.0, ttt_s=0.4', 'level_label': 'hysteresis_db=4.0, ttt_s=0.4'}
+[sweep a3_tuning] hysteresis_db=4.0, ttt_s=1.0
+  20 runs (20 seeds x 1 algorithms) in 15.5 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=4.0, ttt_s=1.0', 'level_label': 'hysteresis_db=4.0, ttt_s=1.0'}
+[sweep a3_tuning] hysteresis_db=4.0, ttt_s=2.0
+  20 runs (20 seeds x 1 algorithms) in 15.9 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=4.0, ttt_s=2.0', 'level_label': 'hysteresis_db=4.0, ttt_s=2.0'}
+[sweep a3_tuning] hysteresis_db=6.0, ttt_s=0.0
+  20 runs (20 seeds x 1 algorithms) in 16.3 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=6.0, ttt_s=0.0', 'level_label': 'hysteresis_db=6.0, ttt_s=0.0'}
+[sweep a3_tuning] hysteresis_db=6.0, ttt_s=0.2
+  20 runs (20 seeds x 1 algorithms) in 15.3 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=6.0, ttt_s=0.2', 'level_label': 'hysteresis_db=6.0, ttt_s=0.2'}
+[sweep a3_tuning] hysteresis_db=6.0, ttt_s=0.4
+  20 runs (20 seeds x 1 algorithms) in 15.5 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=6.0, ttt_s=0.4', 'level_label': 'hysteresis_db=6.0, ttt_s=0.4'}
+[sweep a3_tuning] hysteresis_db=6.0, ttt_s=1.0
+  20 runs (20 seeds x 1 algorithms) in 15.8 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=6.0, ttt_s=1.0', 'level_label': 'hysteresis_db=6.0, ttt_s=1.0'}
+[sweep a3_tuning] hysteresis_db=6.0, ttt_s=2.0
+  20 runs (20 seeds x 1 algorithms) in 15.4 s {'sweep': 'a3_tuning', 'level': 'hysteresis_db=6.0, ttt_s=2.0', 'level_label': 'hysteresis_db=6.0, ttt_s=2.0'}
+                 level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+hysteresis_db=1.0, ttt_s=0.0            2015.300            38.240               0.277             0.005             0.084           0.002                      0.000                    0.000                5.023              0.009                 0.000               0.000
+hysteresis_db=1.0, ttt_s=0.2            1287.800            23.958               0.236             0.008             0.054           0.001                      0.000                    0.000                5.170              0.006                 0.000               0.000
+hysteresis_db=1.0, ttt_s=0.4             951.800            20.365               0.212             0.011             0.041           0.001                      0.000                    0.000                5.228              0.006                 0.000               0.000
+hysteresis_db=1.0, ttt_s=1.0             512.200            12.635               0.164             0.011             0.026           0.001                      6.000                    1.392                5.276              0.006                 0.000               0.000
+hysteresis_db=1.0, ttt_s=2.0             246.700             8.031               0.092             0.012             0.019           0.001                     15.300                    2.721                5.281              0.009                 0.000               0.000
+hysteresis_db=2.0, ttt_s=0.0             961.400            19.104               0.205             0.008             0.040           0.001                      0.000                    0.000                5.251              0.005                 0.000               0.000
+hysteresis_db=2.0, ttt_s=0.2             656.000            18.076               0.167             0.008             0.028           0.001                      0.000                    0.000                5.295              0.005                 0.000               0.000
+hysteresis_db=2.0, ttt_s=0.4             493.700            16.991               0.148             0.010             0.022           0.001                      0.000                    0.000                5.312              0.006                 0.000               0.000
+hysteresis_db=2.0, ttt_s=1.0             253.000            11.646               0.092             0.012             0.016           0.001                      8.700                    1.752                5.310              0.009                 0.000               0.001
+hysteresis_db=2.0, ttt_s=2.0             124.900             6.733               0.035             0.010             0.015           0.001                     16.300                    3.101                5.276              0.010                 0.000               0.000
+hysteresis_db=3.0, ttt_s=0.0             511.100            15.125               0.151             0.008             0.021           0.001                      0.000                    0.000                5.331              0.005                 0.000               0.000
+hysteresis_db=3.0, ttt_s=0.2             344.200            11.691               0.117             0.011             0.015           0.001                      0.000                    0.000                5.342              0.005                 0.000               0.000
+hysteresis_db=3.0, ttt_s=0.4             263.500            10.489               0.095             0.009             0.013           0.001                      0.100                    0.209                5.336              0.007                 0.000               0.000
+hysteresis_db=3.0, ttt_s=1.0             144.600             6.591               0.050             0.010             0.013           0.001                     10.200                    1.870                5.294              0.005                 0.000               0.000
+hysteresis_db=3.0, ttt_s=2.0              76.800             3.882               0.011             0.008             0.014           0.001                     20.300                    3.466                5.222              0.010                 0.000               0.000
+hysteresis_db=4.0, ttt_s=0.0             282.700            13.768               0.104             0.009             0.012           0.001                      0.000                    0.000                5.356              0.005                 0.000               0.000
+hysteresis_db=4.0, ttt_s=0.2             210.400             9.853               0.079             0.010             0.010           0.000                      0.000                    0.000                5.336              0.006                 0.000               0.000
+hysteresis_db=4.0, ttt_s=0.4             166.100             8.015               0.058             0.013             0.009           0.000                      0.000                    0.000                5.314              0.007                 0.000               0.000
+hysteresis_db=4.0, ttt_s=1.0              92.800             4.649               0.023             0.011             0.012           0.001                     14.200                    2.879                5.238              0.010                 0.000               0.000
+hysteresis_db=4.0, ttt_s=2.0              50.100             2.513               0.000             0.000             0.014           0.001                     22.500                    3.297                5.141              0.012                 0.000               0.000
+hysteresis_db=6.0, ttt_s=0.0             138.100             8.208               0.050             0.009             0.006           0.000                      0.000                    0.000                5.289              0.010                 0.000               0.000
+hysteresis_db=6.0, ttt_s=0.2             107.800             4.877               0.042             0.014             0.006           0.000                      0.000                    0.000                5.238              0.010                 0.000               0.000
+hysteresis_db=6.0, ttt_s=0.4              95.900             4.650               0.028             0.010             0.008           0.000                      0.000                    0.000                5.192              0.012                 0.000               0.000
+hysteresis_db=6.0, ttt_s=1.0              47.800             3.566               0.012             0.010             0.011           0.001                     17.300                    2.788                5.071              0.022                 0.000               0.000
+hysteresis_db=6.0, ttt_s=2.0              25.500             2.446               0.003             0.007             0.015           0.001                     27.200                    2.773                4.973              0.018                 0.000               0.000
+
+=== sweep 'predictive_tuning' (20 seeds) ===
+[sweep predictive_tuning] margin_db=0.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 23.8 s {'sweep': 'predictive_tuning', 'level': 'margin_db=0.0, snr_cap_db=10.0', 'level_label': 'margin_db=0.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=0.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 25.6 s {'sweep': 'predictive_tuning', 'level': 'margin_db=0.0, snr_cap_db=15.0', 'level_label': 'margin_db=0.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=0.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 26.4 s {'sweep': 'predictive_tuning', 'level': 'margin_db=0.0, snr_cap_db=20.0', 'level_label': 'margin_db=0.0, snr_cap_db=20.0'}
+[sweep predictive_tuning] margin_db=1.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 25.2 s {'sweep': 'predictive_tuning', 'level': 'margin_db=1.0, snr_cap_db=10.0', 'level_label': 'margin_db=1.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=1.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 25.5 s {'sweep': 'predictive_tuning', 'level': 'margin_db=1.0, snr_cap_db=15.0', 'level_label': 'margin_db=1.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=1.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 26.1 s {'sweep': 'predictive_tuning', 'level': 'margin_db=1.0, snr_cap_db=20.0', 'level_label': 'margin_db=1.0, snr_cap_db=20.0'}
+[sweep predictive_tuning] margin_db=2.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 25.7 s {'sweep': 'predictive_tuning', 'level': 'margin_db=2.0, snr_cap_db=10.0', 'level_label': 'margin_db=2.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=2.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 25.0 s {'sweep': 'predictive_tuning', 'level': 'margin_db=2.0, snr_cap_db=15.0', 'level_label': 'margin_db=2.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=2.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 25.5 s {'sweep': 'predictive_tuning', 'level': 'margin_db=2.0, snr_cap_db=20.0', 'level_label': 'margin_db=2.0, snr_cap_db=20.0'}
+[sweep predictive_tuning] margin_db=3.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 25.0 s {'sweep': 'predictive_tuning', 'level': 'margin_db=3.0, snr_cap_db=10.0', 'level_label': 'margin_db=3.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=3.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 27.0 s {'sweep': 'predictive_tuning', 'level': 'margin_db=3.0, snr_cap_db=15.0', 'level_label': 'margin_db=3.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=3.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 25.5 s {'sweep': 'predictive_tuning', 'level': 'margin_db=3.0, snr_cap_db=20.0', 'level_label': 'margin_db=3.0, snr_cap_db=20.0'}
+[sweep predictive_tuning] margin_db=4.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 26.1 s {'sweep': 'predictive_tuning', 'level': 'margin_db=4.0, snr_cap_db=10.0', 'level_label': 'margin_db=4.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=4.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 24.7 s {'sweep': 'predictive_tuning', 'level': 'margin_db=4.0, snr_cap_db=15.0', 'level_label': 'margin_db=4.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=4.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 25.2 s {'sweep': 'predictive_tuning', 'level': 'margin_db=4.0, snr_cap_db=20.0', 'level_label': 'margin_db=4.0, snr_cap_db=20.0'}
+[sweep predictive_tuning] margin_db=6.0, snr_cap_db=10.0
+  20 runs (20 seeds x 1 algorithms) in 26.3 s {'sweep': 'predictive_tuning', 'level': 'margin_db=6.0, snr_cap_db=10.0', 'level_label': 'margin_db=6.0, snr_cap_db=10.0'}
+[sweep predictive_tuning] margin_db=6.0, snr_cap_db=15.0
+  20 runs (20 seeds x 1 algorithms) in 25.5 s {'sweep': 'predictive_tuning', 'level': 'margin_db=6.0, snr_cap_db=15.0', 'level_label': 'margin_db=6.0, snr_cap_db=15.0'}
+[sweep predictive_tuning] margin_db=6.0, snr_cap_db=20.0
+  20 runs (20 seeds x 1 algorithms) in 24.9 s {'sweep': 'predictive_tuning', 'level': 'margin_db=6.0, snr_cap_db=20.0', 'level_label': 'margin_db=6.0, snr_cap_db=20.0'}
+                   level_label  ho_rate_per_h_mean  ho_rate_per_h_ci  pingpong_rate_mean  pingpong_rate_ci  outage_prob_mean  outage_prob_ci  link_loss_rate_per_h_mean  link_loss_rate_per_h_ci  mean_se_bps_hz_mean  mean_se_bps_hz_ci  ho_failure_rate_mean  ho_failure_rate_ci
+margin_db=0.0, snr_cap_db=10.0              81.600             7.349               0.061             0.020             0.006           0.000                      0.000                    0.000                4.741              0.050                 0.001               0.002
+margin_db=0.0, snr_cap_db=15.0             235.700            14.603               0.147             0.019             0.010           0.001                      0.000                    0.000                5.350              0.007                 0.000               0.000
+margin_db=0.0, snr_cap_db=20.0            1075.600            31.622               0.529             0.015             0.045           0.001                      0.000                    0.000                5.223              0.008                 0.000               0.000
+margin_db=1.0, snr_cap_db=10.0              66.400             6.889               0.043             0.018             0.009           0.001                      1.900                    0.884                4.710              0.056                 0.000               0.000
+margin_db=1.0, snr_cap_db=15.0              75.900             4.246               0.015             0.008             0.005           0.000                      0.000                    0.000                5.261              0.014                 0.000               0.000
+margin_db=1.0, snr_cap_db=20.0             186.400             8.763               0.131             0.012             0.008           0.000                      0.000                    0.000                5.396              0.004                 0.000               0.000
+margin_db=2.0, snr_cap_db=10.0              50.300             5.692               0.021             0.015             0.013           0.001                     12.200                    2.409                4.733              0.053                 0.002               0.004
+margin_db=2.0, snr_cap_db=15.0              60.800             2.903               0.010             0.009             0.005           0.000                      0.000                    0.000                5.191              0.012                 0.000               0.000
+margin_db=2.0, snr_cap_db=20.0             103.300             5.618               0.032             0.013             0.006           0.000                      0.000                    0.000                5.381              0.006                 0.000               0.000
+margin_db=3.0, snr_cap_db=10.0              33.500             4.163               0.009             0.010             0.016           0.002                     23.200                    3.346                4.774              0.043                 0.000               0.000
+margin_db=3.0, snr_cap_db=15.0              54.100             3.835               0.007             0.007             0.006           0.001                      0.700                    0.550                5.117              0.016                 0.000               0.000
+margin_db=3.0, snr_cap_db=20.0              76.900             3.587               0.011             0.007             0.005           0.000                      0.000                    0.000                5.330              0.006                 0.000               0.000
+margin_db=4.0, snr_cap_db=10.0              29.300             3.160               0.010             0.012             0.017           0.002                     26.600                    2.752                4.785              0.037                 0.000               0.000
+margin_db=4.0, snr_cap_db=15.0              48.900             2.998               0.010             0.008             0.008           0.001                      3.200                    1.729                5.066              0.020                 0.000               0.000
+margin_db=4.0, snr_cap_db=20.0              63.000             3.264               0.004             0.005             0.005           0.001                      0.000                    0.000                5.261              0.009                 0.000               0.000
+margin_db=6.0, snr_cap_db=10.0              28.500             3.241               0.010             0.012             0.017           0.002                     27.600                    3.016                4.789              0.038                 0.000               0.000
+margin_db=6.0, snr_cap_db=15.0              35.300             1.951               0.002             0.005             0.012           0.001                     13.000                    3.334                5.008              0.020                 0.000               0.000
+margin_db=6.0, snr_cap_db=20.0              47.100             2.656               0.000             0.000             0.008           0.001                      4.400                    1.310                5.120              0.016                 0.000               0.000
+
+Wrote CSV files and figures to results/main/

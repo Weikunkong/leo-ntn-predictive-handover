@@ -21,7 +21,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import pandas as pd  # noqa: E402
-
 from _common import MAIN_METRICS, load, parse_args, print_summary, summary_table, write_provenance  # noqa: E402
 
 from leo_ntn_handover.evaluation.plotting import plot_grid_heatmap, plot_sensitivity  # noqa: E402
@@ -37,7 +36,8 @@ X_LABELS = {
 }
 
 
-def plot_sweep(name: str, spec: dict, summary: pd.DataFrame, out: Path, reference: pd.DataFrame | None) -> None:
+def plot_sweep(name: str, spec: dict, summary: pd.DataFrame, out: Path, reference: pd.DataFrame | None,
+               main_algorithms: list[str] | None = None) -> None:
     if "grid" in spec:
         keys = list(spec["grid"].keys())
         for metric in ("outage_prob", "ho_rate_per_h", "pingpong_rate"):
@@ -48,8 +48,10 @@ def plot_sweep(name: str, spec: dict, summary: pd.DataFrame, out: Path, referenc
                                   fmt="{:.3f}" if metric != "ho_rate_per_h" else "{:.0f}")
         return
     ref = None
-    if reference is not None:
-        ref = reference[~reference["algorithm"].isin(summary["algorithm"].unique())]
+    if reference is not None and main_algorithms:
+        # flat reference lines only for the *main* rules that the swept parameter cannot affect
+        unaffected = [a for a in main_algorithms if a not in set(summary["algorithm"].unique())]
+        ref = reference[reference["algorithm"].isin(unaffected)]
         if ref.empty:
             ref = None
     plot_sensitivity(summary, MAIN_METRICS, out / "figures" / f"fig3_sensitivity_{name}.png",
@@ -79,8 +81,9 @@ def main() -> None:
         summary = summary_table(runs, group, confidence=cfg.evaluation.confidence)
         summary.to_csv(out / "csv" / f"sensitivity_{name}_summary.csv", index=False)
         print_summary(summary, label_col="level_label")
-        plot_sweep(name, spec, summary, out, reference)
-    write_provenance(out, cfg, seeds, {"experiment": "sensitivity", "sweeps": names})
+        plot_sweep(name, spec, summary, out, reference, list(cfg.handover.algorithms))
+    write_provenance(out, cfg, seeds, {"experiment": "sensitivity", "sweeps": names},
+                     name="provenance_sensitivity_" + "_".join(names) if args.sweeps else "provenance_sensitivity")
     print(f"\nWrote CSV files and figures to {out}/")
 
 

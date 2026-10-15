@@ -82,9 +82,9 @@ evaluation:
 # "algorithms" restricts a sweep to the rules that the parameter can affect; the others are drawn as
 # flat reference lines taken from the main comparison.
 sweeps:
-  timing_error:
+  timing_error:                 # negative = UE believes the satellite is behind its true position (late predictions)
     path: ephemeris.timing_error_s
-    values: [0.0, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0]
+    values: [-20.0, -10.0, -5.0, -2.0, -1.0, 0.0, 1.0, 2.0, 5.0, 10.0, 20.0]
     algorithms: [maxvis, predictive, predictive_nocorr]
   measurement_noise:
     path: measurement.noise_std_db

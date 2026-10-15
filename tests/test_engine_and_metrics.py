@@ -2,7 +2,7 @@ import numpy as np
 
 from leo_ntn_handover.evaluation import compute_metrics, mean_ci, paired_diff_ci
 from leo_ntn_handover.handover import GreedyHandover, MaxVisibilityHandover, PredictiveHandover
-from leo_ntn_handover.simulation.engine import NO_SAT, SimulationEngine
+from leo_ntn_handover.simulation.engine import SimulationEngine
 from leo_ntn_handover.simulation.ephemeris import EphemerisOracle
 from tests.conftest import make_trace
 
@@ -102,7 +102,8 @@ def test_predictive_avoids_setting_satellite_outage(two_sat_trace):
     tr = two_sat_trace
     true = tr.snr_geo_db[:, : tr.n_steps]
     oracle = EphemerisOracle(tr)
-    res = engine_for(tr, true, true, delay=0.0).run(PredictiveHandover(horizon_s=10.0, use_bias_correction=False), oracle)
+    algo = PredictiveHandover(horizon_s=10.0, use_bias_correction=False)
+    res = engine_for(tr, true, true, delay=0.0).run(algo, oracle)
     assert res.serving[-1] == 1
     assert not any(e.kind == "link_loss" for e in res.events)
     assert compute_metrics(res)["outage_prob"] == 0.0

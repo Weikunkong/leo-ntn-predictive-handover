@@ -1,8 +1,8 @@
 import os
+from datetime import datetime, timezone
 
 import numpy as np
 import sgp4
-from datetime import datetime, timezone
 
 from leo_ntn_handover.orbit import Constellation, julian_dates, load_satellites, walker_delta_satrecs
 from leo_ntn_handover.orbit.tle import write_tle_file

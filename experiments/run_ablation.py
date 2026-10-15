@@ -16,7 +16,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from _common import ABLATIONS, MAIN_METRICS, load, paired_table, parse_args, print_summary, summary_table, write_provenance  # noqa: E402
+from _common import (  # noqa: E402
+    ABLATIONS,
+    MAIN_METRICS,
+    load,
+    paired_table,
+    parse_args,
+    print_summary,
+    summary_table,
+    write_provenance,
+)
 
 from leo_ntn_handover.evaluation.plotting import plot_metric_bars  # noqa: E402
 from leo_ntn_handover.experiments import run_many  # noqa: E402
@@ -36,7 +45,7 @@ def main() -> None:
     plot_metric_bars(summary[summary["algorithm"].isin(ABLATIONS)], MAIN_METRICS,
                      out / "figures" / "fig4_ablation.png",
                      title=f"Ablation of the predictive rule ({len(seeds)} seeds, 95% CI)")
-    write_provenance(out, cfg, seeds, {"experiment": "ablation"})
+    write_provenance(out, cfg, seeds, {"experiment": "ablation"}, name="provenance_ablation")
     print(f"\nWrote CSV files and figures to {out}/")
 
 

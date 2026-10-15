@@ -15,7 +15,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import pandas as pd  # noqa: E402
 import yaml  # noqa: E402
-
 from _common import ABLATIONS, MAIN_METRICS  # noqa: E402
 from run_sensitivity import plot_sweep  # noqa: E402
 
@@ -48,11 +47,13 @@ def main() -> None:
         made.append(plot_metric_bars(summary[summary["algorithm"].isin(ABLATIONS)], MAIN_METRICS,
                                      out / "figures" / "fig4_ablation.png", title="Ablation (95% CI)"))
     with open(args.config) as fh:
-        sweeps = (yaml.safe_load(fh) or {}).get("sweeps", {})
+        raw = yaml.safe_load(fh) or {}
+    sweeps = raw.get("sweeps", {})
+    main_algorithms = list((raw.get("handover") or {}).get("algorithms") or [])
     for name, spec in sweeps.items():
         f = csv / f"sensitivity_{name}_summary.csv"
         if f.exists():
-            plot_sweep(name, spec, pd.read_csv(f), out, reference)
+            plot_sweep(name, spec, pd.read_csv(f), out, reference, main_algorithms)
             made.append(out / "figures" / f"fig3_sensitivity_{name}.png")
     quick = csv / "quickstart_summary.csv"
     if quick.exists():

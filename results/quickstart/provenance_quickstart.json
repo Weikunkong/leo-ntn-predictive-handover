@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-15T19:02:26",
+  "timestamp": "2026-10-15T19:57:36",
   "package_version": "0.1.0",
   "python": "3.13.16",
   "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
@@ -92,7 +92,7 @@
           "margin_db": 2.0,
           "bias_alpha": 0.2,
           "bias_decay_s": 10.0,
-          "snr_cap_db": 20.0,
+          "snr_cap_db": 15.0,
           "outage_penalty_db": 20.0,
           "eligibility_margin_db": 1.0,
           "use_bias_correction": true
@@ -113,5 +113,6 @@
       "confidence": 0.95
     },
     "sweeps": {}
-  }
+  },
+  "experiment": "quickstart"
 }

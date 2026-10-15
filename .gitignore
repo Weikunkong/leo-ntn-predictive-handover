@@ -17,3 +17,6 @@ data/cache/
 .vscode/
 .idea/
 .DS_Store
+
+# Tool caches
+.ruff_cache/

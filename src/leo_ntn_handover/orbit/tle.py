@@ -12,12 +12,11 @@ Only the loaders live here; propagation is done by :class:`Constellation`.
 
 from __future__ import annotations
 
-import csv
 import json
 from pathlib import Path
 
-from sgp4.api import Satrec, WGS72
 from sgp4 import omm
+from sgp4.api import WGS72, Satrec
 
 
 def load_tle_file(path: str | Path) -> tuple[list[Satrec], list[str]]:

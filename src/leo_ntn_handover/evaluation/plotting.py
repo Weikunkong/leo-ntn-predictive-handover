@@ -186,12 +186,13 @@ def plot_metric_bars(summary: pd.DataFrame, metrics: list[str], path: str | Path
 # --------------------------------------------------------------------------- sensitivity
 def plot_sensitivity(summary: pd.DataFrame, metrics: list[str], path: str | Path, x_label: str,
                      title: str | None = None, log_x: bool = False, reference: pd.DataFrame | None = None,
-                     ncols: int = 3) -> Path:
+                     ncols: int = 3, log_metrics: tuple[str, ...] = ("ho_rate_per_h", "outage_prob")) -> Path:
     """Metric vs sweep level, one line per algorithm with a 95% CI band.
 
     ``summary`` must contain ``level`` (numeric or categorical) and ``algorithm`` columns.
     ``reference`` (optional) gives flat baseline values for algorithms that are unaffected
-    by the swept parameter; they are drawn as dashed horizontal lines.
+    by the swept parameter; they are drawn as dashed horizontal lines. Metrics in
+    ``log_metrics`` get a logarithmic y-axis when the values span more than a factor of 50.
     """
     algos = _order(summary["algorithm"].tolist())
     levels = summary["level"].drop_duplicates().tolist()
@@ -208,13 +209,29 @@ def plot_sensitivity(summary: pd.DataFrame, metrics: list[str], path: str | Path
             ci = d[f"{m}_ci"].to_numpy(dtype=float)
             ax.plot(xs, y, color=_color(a), marker=ALGO_MARKERS.get(a, "o"), ms=4, lw=1.3, label=_label(a))
             ax.fill_between(xs, y - np.nan_to_num(ci), y + np.nan_to_num(ci), color=_color(a), alpha=0.15, lw=0)
+        swept = (summary[f"{m}_mean"] + summary[f"{m}_ci"].fillna(0.0)).to_numpy(dtype=float)
+        swept_max = float(np.nanmax(swept)) if np.isfinite(swept).any() else 0.0
+        off_scale: list[str] = []
         if reference is not None:
             for a in _order(reference["algorithm"].tolist()):
                 if a in algos:
                     continue
                 row = reference[reference["algorithm"] == a].iloc[0]
-                ax.axhline(row[f"{m}_mean"], color=_color(a), ls="--", lw=1.0, label=f"{_label(a)} (unaffected)")
-        ax.set_title(METRIC_LABELS.get(m, m), fontsize=9)
+                val = float(row[f"{m}_mean"])
+                if np.isfinite(val) and val > 3.0 * max(swept_max, 1e-12):
+                    off_scale.append(f"{ALGO_SHORT.get(a, a)}: {val:.3g} (off scale)")
+                    continue
+                ax.axhline(val, color=_color(a), ls="--", lw=1.0, label=f"{_label(a)} (unaffected)")
+        if off_scale:
+            ax.text(0.98, 0.97, "\n".join(off_scale), transform=ax.transAxes, ha="right", va="top",
+                    fontsize=6.5, color="#555555")
+        vals = summary[f"{m}_mean"].to_numpy(dtype=float)
+        vals = vals[np.isfinite(vals)]
+        if m in log_metrics and len(vals) >= 2 and vals.min() > 0 and vals.max() / vals.min() > 50:
+            ax.set_yscale("log")
+            ax.set_title(METRIC_LABELS.get(m, m) + " (log)", fontsize=9)
+        else:
+            ax.set_title(METRIC_LABELS.get(m, m), fontsize=9)
         ax.set_xlabel(x_label)
         if numeric and log_x:
             ax.set_xscale("symlog", linthresh=max(1e-3, float(np.min(xs[xs > 0])) if (xs > 0).any() else 1.0))
