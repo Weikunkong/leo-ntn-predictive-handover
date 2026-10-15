@@ -109,7 +109,7 @@ has no training phase.
 Requirements: Python ≥ 3.10, CPU only, no paid services, < 1 GB RAM for the main scenario.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Weikunkong/leo-ntn-predictive-handover.git
 cd leo-ntn-predictive-handover
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
