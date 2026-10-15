@@ -63,7 +63,7 @@ handover:
       margin_db: 2.0
       bias_alpha: 0.2
       bias_decay_s: 10.0
-      snr_cap_db: 20.0
+      snr_cap_db: 15.0
       outage_penalty_db: 20.0
       eligibility_margin_db: 1.0
       use_bias_correction: true

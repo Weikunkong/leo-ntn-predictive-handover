@@ -2,13 +2,14 @@
 
 For every candidate ``i`` the rule forms a *horizon utility*
 
-    U_i(t) = (1/J) * sum_{j=1..J} g( s_i(t + tau_j) + b_i(t) * exp(-tau_j / T_b) )
+    U_i(t) = (1/(J+1)) * sum_{j=0..J} g( s_i(t + tau_j) + b_i(t) * exp(-tau_j / T_b) )
 
 where ``s_i`` is the geometry-only SNR predicted from the ephemeris at the
-horizon samples ``tau_j = j * T_h / J``, ``b_i(t)`` is an exponentially
-weighted estimate of the measurement-minus-prediction residual (shadowing,
-blockage, calibration offsets) that is assumed to fade out with time
-constant ``T_b``, and
+horizon samples ``tau_j = j * T_h / J`` (the current instant ``tau_0 = 0`` is
+included so that a serving link that is blocked *now* is penalised
+immediately), ``b_i(t)`` is an exponentially weighted estimate of the
+measurement-minus-prediction residual (shadowing, blockage, calibration
+offsets) that is assumed to fade out with time constant ``T_b``, and
 
     g(x) = min(x, x_cap)          if x >= SNR_min
     g(x) = -penalty               otherwise.
@@ -68,9 +69,10 @@ class PredictiveHandover(HandoverAlgorithm):
 
     # ------------------------------------------------------------------
     def _horizon_offsets(self) -> np.ndarray:
+        """Horizon sample offsets 0, T_h/J, ..., T_h (only 0 when the horizon is zero)."""
         if self.horizon_s <= 0.0:
             return np.zeros(1)
-        return np.linspace(self.horizon_s / self.n_samples, self.horizon_s, self.n_samples)
+        return np.linspace(0.0, self.horizon_s, self.n_samples + 1)
 
     def _update_bias(self, obs: Observation, oracle: EphemerisOracle) -> np.ndarray:
         """EWMA of measurement minus ephemeris prediction for each candidate; returns (C,)."""

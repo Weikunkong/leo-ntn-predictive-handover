@@ -1,0 +1,15 @@
+
+=== sweep 'timing_error' (20 seeds) ===
+[sweep timing_error] 0.0
+  60 runs (20 seeds x 3 algorithms) in 34.7 s {'sweep': 'timing_error', 'level': 0.0, 'level_label': '0.0'}
+[sweep timing_error] 0.5
+  60 runs (20 seeds x 3 algorithms) in 32.9 s {'sweep': 'timing_error', 'level': 0.5, 'level_label': '0.5'}
+[sweep timing_error] 1.0
+  60 runs (20 seeds x 3 algorithms) in 34.5 s {'sweep': 'timing_error', 'level': 1.0, 'level_label': '1.0'}
+[sweep timing_error] 2.0
+  60 runs (20 seeds x 3 algorithms) in 34.2 s {'sweep': 'timing_error', 'level': 2.0, 'level_label': '2.0'}
+[sweep timing_error] 5.0
+  60 runs (20 seeds x 3 algorithms) in 34.3 s {'sweep': 'timing_error', 'level': 5.0, 'level_label': '5.0'}
+[sweep timing_error] 10.0
+  60 runs (20 seeds x 3 algorithms) in 39.4 s {'sweep': 'timing_error', 'level': 10.0, 'level_label': '10.0'}
+[sweep timing_error] 20.0

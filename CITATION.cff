@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "LEO-NTN Predictive Handover: a reproducible research framework for ephemeris-aided satellite handover in 5G non-terrestrial networks"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Weikun
+version: 0.1.0
+date-released: "2026-10-15"
+license: MIT
+keywords:
+  - LEO
+  - non-terrestrial networks
+  - 5G NTN
+  - handover
+  - mobility management
+  - simulation
+abstract: >-
+  Python framework that simulates satellite-level handover for a single user in a LEO constellation
+  (SGP4-propagated Walker-delta or TLE/OMM constellations, 3GPP TR 38.821 Set-1 S-band link budget,
+  simplified TR 38.811 LOS/NLOS blockage and shadowing) and compares greedy, A3-style and
+  ephemeris-based handover rules with an ephemeris-aided, measurement-corrected, cost-aware predictive
+  rule under ephemeris timing errors, measurement noise, blockage and handover execution delay.

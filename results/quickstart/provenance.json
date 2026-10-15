@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-10-15T19:02:26",
+  "package_version": "0.1.0",
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "pandas": "3.0.5",
+  "matplotlib": "3.11.2",
+  "sgp4": "2.27",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "command": "experiments/run_quickstart.py --workers 2",
+  "config": {
+    "name": "quickstart",
+    "constellation": {
+      "type": "walker_delta",
+      "altitude_km": 550.0,
+      "inclination_deg": 53.0,
+      "n_planes": 24,
+      "sats_per_plane": 24,
+      "phasing": 1,
+      "epoch_utc": "2026-01-01T00:00:00",
+      "file": null,
+      "name_filter": null,
+      "max_sats": null
+    },
+    "ue": {
+      "lat_deg": 49.57,
+      "lon_deg": 11.03,
+      "alt_m": 300.0,
+      "speed_mps": 0.0,
+      "heading_deg": 90.0,
+      "randomize_longitude": true,
+      "randomize_start_time": true
+    },
+    "time": {
+      "duration_s": 600.0,
+      "step_s": 0.2,
+      "geometry_step_s": 1.0,
+      "tail_s": 900.0
+    },
+    "link": {
+      "carrier_hz": 2000000000.0,
+      "eirp_density_dbw_per_mhz": 34.0,
+      "ue_antenna_gain_dbi": 0.0,
+      "ue_noise_figure_db": 7.0,
+      "ue_antenna_temp_k": 290.0,
+      "extra_losses_db": 0.3,
+      "min_elevation_deg": 25.0
+    },
+    "channel": {
+      "environment": "suburban",
+      "enable_blockage": true,
+      "enable_shadowing": true,
+      "nlos_mean_duration_s": 4.0,
+      "shadow_decorr_time_s": 2.0
+    },
+    "measurement": {
+      "noise_std_db": 1.0,
+      "l3_filter_k": 4
+    },
+    "handover": {
+      "snr_min_db": 0.0,
+      "execution_delay_s": 0.15,
+      "link_loss_timeout_s": 1.0,
+      "recovery_delay_s": 0.5,
+      "pingpong_window_s": 10.0,
+      "algorithms": [
+        "greedy",
+        "a3",
+        "maxvis",
+        "predictive"
+      ],
+      "params": {
+        "greedy": {
+          "tolerance_db": 0.0
+        },
+        "a3": {
+          "hysteresis_db": 3.0,
+          "ttt_s": 0.4
+        },
+        "maxvis": {
+          "guard_time_s": 5.0
+        },
+        "predictive": {
+          "horizon_s": 20.0,
+          "n_samples": 5,
+          "margin_db": 2.0,
+          "bias_alpha": 0.2,
+          "bias_decay_s": 10.0,
+          "snr_cap_db": 20.0,
+          "outage_penalty_db": 20.0,
+          "eligibility_margin_db": 1.0,
+          "use_bias_correction": true
+        }
+      }
+    },
+    "ephemeris": {
+      "timing_error_s": 0.0,
+      "max_lookahead_s": 900.0
+    },
+    "evaluation": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "se_cap_bits_per_hz": 5.5,
+      "confidence": 0.95
+    },
+    "sweeps": {}
+  }
+}
