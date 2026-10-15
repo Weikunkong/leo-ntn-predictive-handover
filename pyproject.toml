@@ -9,7 +9,7 @@ description = "Reproducible research framework for ephemeris-aided predictive sa
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Weikun Liu" }]
+authors = [{ name = "Weikun Kong" }]
 keywords = ["LEO", "NTN", "5G", "handover", "satellite", "mobility management", "simulation"]
 classifiers = [
     "Programming Language :: Python :: 3",

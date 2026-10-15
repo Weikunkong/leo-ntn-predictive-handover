@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 title: "LEO-NTN Predictive Handover: a reproducible research framework for ephemeris-aided satellite handover in 5G non-terrestrial networks"
 type: software
 authors:
-  - family-names: Liu
+  - family-names: Kong
     given-names: Weikun
 version: 0.1.0
 date-released: "2026-10-15"
