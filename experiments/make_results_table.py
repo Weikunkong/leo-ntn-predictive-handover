@@ -3,7 +3,7 @@
 
 Usage (from the repository root):
     python experiments/make_results_table.py --out results/main
-    python experiments/make_results_table.py --out results/main --sweep ho_delay
+    python experiments/make_results_table.py --out results/main --sweep timing_error
 """
 
 from __future__ import annotations

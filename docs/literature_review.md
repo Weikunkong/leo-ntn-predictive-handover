@@ -108,8 +108,8 @@ and fading make near-equal candidates swap order and cause ping-pong.
 A 3GPP-parameterised (TR 38.821 Set-1, TR 38.811 S-band tables) robustness
 study of a lightweight ephemeris-aided predictive rule with ablations, against
 greedy and tuned A3 baselines and the classical max-visibility rule, with
-sweeps over ephemeris timing error, measurement noise, execution delay,
-prediction horizon, environment and constellation size. The project does
+sweeps over ephemeris timing error and measurement noise and tuning grids
+for both the baseline and the proposed rule. The project does
 **not** claim novelty of ephemeris-based handover itself, nor does it
 guarantee publishable results; it provides the reproducible evidence needed to
 judge whether the lightweight rule is worth pursuing.

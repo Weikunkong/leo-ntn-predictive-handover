@@ -89,23 +89,6 @@ sweeps:
   measurement_noise:
     path: measurement.noise_std_db
     values: [0.0, 0.5, 1.0, 2.0, 3.0, 4.0]
-  ho_delay:
-    path: handover.execution_delay_s
-    values: [0.05, 0.15, 0.3, 0.6, 1.0, 2.0]
-  horizon:
-    path: handover.params.predictive.horizon_s
-    values: [0.0, 2.0, 5.0, 10.0, 20.0, 40.0, 80.0]
-    algorithms: [predictive, predictive_nocorr]
-  environment:
-    path: channel.environment
-    values: [suburban, urban, dense_urban]
-  density:
-    path: constellation
-    values:
-      - {n_planes: 24, sats_per_plane: 24}
-      - {n_planes: 36, sats_per_plane: 22}
-      - {n_planes: 72, sats_per_plane: 22}
-    labels: ["576 sats", "792 sats", "1584 sats"]
   a3_tuning:
     grid:
       handover.params.a3.hysteresis_db: [1.0, 2.0, 3.0, 4.0, 6.0]

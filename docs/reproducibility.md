@@ -47,7 +47,7 @@ Measured in the development environment (2 vCPU container, Python 3.13):
 | `python -m pytest` | ≈ 8 s |
 | `run_quickstart.py` (576 satellites, 3 seeds × 10 min, 7 rules) | ≈ 10 s |
 | `run_comparison.py` (1584 satellites, 20 seeds × 30 min, 7 rules, 2 workers) | ≈ 3 min geometry (once, cached) + ≈ 2.5 min runs |
-| `run_sensitivity.py` (all eight sweeps, 20 seeds, 2 workers) | ≈ 40 min (≈ 1 s per predictive run of 9000 steps; A3/greedy 0.1–0.4 s) |
+| `run_sensitivity.py` (two sweeps + two tuning grids, 20 seeds, 2 workers) | ≈ 25 min (≈ 1 s per predictive run of 9000 steps; A3/greedy 0.1–0.4 s) |
 
 A laptop with 4–8 cores runs the complete set in well under an hour.
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Parameter sensitivity sweeps (ephemeris timing error, measurement noise, handover delay, horizon,
-environment, constellation density) and tuning grids for the A3 and predictive rules.
+"""Robustness sweeps (ephemeris timing error, measurement noise) and tuning grids for the A3 and
+predictive rules. Any other parameter can be swept by adding an entry under ``sweeps:`` in the YAML.
 
 Usage (from the repository root):
     python experiments/run_sensitivity.py                                  # all sweeps in configs/starlink_like.yaml
-    python experiments/run_sensitivity.py --sweeps timing_error,ho_delay   # a subset
+    python experiments/run_sensitivity.py --sweeps timing_error            # a subset
     python experiments/run_sensitivity.py --seeds 5 --workers 4
 
 Outputs (default: results/main/):
@@ -29,10 +29,6 @@ from leo_ntn_handover.experiments import run_sweep  # noqa: E402
 X_LABELS = {
     "timing_error": "Ephemeris timing error [s]",
     "measurement_noise": "Measurement noise std [dB]",
-    "ho_delay": "Handover execution delay [s]",
-    "horizon": "Prediction horizon T_h [s]",
-    "environment": "TR 38.811 environment",
-    "density": "Constellation size",
 }
 
 

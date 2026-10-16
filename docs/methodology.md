@@ -166,10 +166,10 @@ decision time per call (complexity proxy).
 * **Statistics.** Mean ± 95 % Student-t confidence interval over seeds;
   paired same-seed differences versus the proposed rule with paired t-test
   p-values (`comparison_paired.csv`).
-* **Sweeps** (`run_sensitivity.py`): ephemeris timing error −20 … +20 s,
-  measurement noise 0–4 dB, execution delay 0.05–2 s, prediction horizon
-  0–80 s, TR 38.811 environment, constellation size 576/792/1584; tuning grids
-  for A3 (hysteresis × TTT) and the predictive rule (margin × cap) so that
-  tuned baselines are compared with a tuned proposal.
+* **Sweeps** (`run_sensitivity.py`): ephemeris timing error −20 … +20 s and
+  measurement noise 0–4 dB; tuning grids for A3 (hysteresis × TTT) and the
+  predictive rule (margin × cap) so that tuned baselines are compared with a
+  tuned proposal. Further parameters (execution delay, horizon, environment,
+  constellation size) can be swept by adding an entry to ``sweeps:`` in the YAML.
 * **Ablation** (`run_ablation.py` / part of `run_comparison.py`).
 * **Quick start** (`run_quickstart.py`): 576 satellites, 10 min, 3 seeds.
