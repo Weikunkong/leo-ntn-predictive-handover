@@ -2,7 +2,7 @@
 
 **A reproducible research framework for ephemeris-aided predictive satellite handover in 5G non-terrestrial networks (NTN)**
 
-[![tests](https://img.shields.io/badge/tests-pytest-blue)](.github/workflows/tests.yml)
+[![tests](https://github.com/Weikunkong/leo-ntn-predictive-handover/actions/workflows/tests.yml/badge.svg)](https://github.com/Weikunkong/leo-ntn-predictive-handover/actions/workflows/tests.yml)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
 
@@ -10,7 +10,7 @@
 > geometry-only link quality over a short horizon, corrected by the measured residual and gated by an
 > explicit handover-cost margin — reduce handover count, ping-pong and outage compared with greedy
 > max-SNR and 3GPP-style A3 hysteresis/time-to-trigger handover, and how do its gains degrade under
-> ephemeris timing error, measurement noise, NLOS blockage and handover execution delay?*
+> ephemeris timing error, measurement noise and NLOS blockage?*
 
 <p align="center">
   <img src="results/main/figures/fig1_timeline.png" alt="Serving-satellite timeline of the four rules" width="85%">
@@ -59,8 +59,10 @@ See the box above. Hypotheses (all falsifiable by the experiments):
   than greedy and A3 at equal or lower outage;
 * **H2** its advantage degrades gracefully with ephemeris timing error and the measurement-based bias
   correction limits the degradation;
-* **H3** under NLOS blockage pure ephemeris prediction is worse than A3, the corrected rule recovers;
-* **H4** longer execution delays hurt every rule, rules that hand over less often are hurt less.
+* **H3** under NLOS blockage pure ephemeris prediction is worse than A3, the corrected rule recovers.
+
+All three are supported by the results in §11 — H1 with one caveat: at default settings the rule
+trades ≈ 3 % of the throughput proxy for its stability (§11.3–11.4).
 
 Scope: satellite-level (one cell per satellite) handover, transparent payload, downlink SNR as the
 link-quality metric, no interference, no protocol stack — see `docs/assumptions.md`.
@@ -74,9 +76,9 @@ link-quality metric, no interference, no protocol stack — see `docs/assumption
 3. A lightweight ephemeris-aided predictive rule (`PredictiveHandover`) with three ablations that
    isolate the contribution of (a) measurement-based bias correction, (b) the handover-cost margin and
    (c) the look-ahead horizon.
-4. A Monte-Carlo evaluation protocol with paired confidence intervals and six sensitivity sweeps
-   (ephemeris timing error, measurement noise, execution delay, horizon, environment, constellation
-   size) plus tuning grids, and an honest discussion of where the proposed rule does *not* win.
+4. A Monte-Carlo evaluation protocol with paired confidence intervals, robustness sweeps over
+   ephemeris timing error and measurement noise, tuning grids for both the baseline and the proposed
+   rule, and an honest discussion of where the proposed rule does *not* win.
 
 ## 5. System model (summary; details in `docs/methodology.md`)
 
@@ -146,7 +148,7 @@ print(compute_metrics(res)["ho_rate_per_h"], compute_metrics(res)["outage_prob"]
 
 ```bash
 python experiments/run_comparison.py            # main comparison + ablation (20 seeds x 30 min, 1584 sats)
-python experiments/run_sensitivity.py           # six sweeps + two tuning grids (configs/starlink_like.yaml)
+python experiments/run_sensitivity.py           # sensitivity sweeps + tuning grids (configs/starlink_like.yaml)
 python experiments/run_sensitivity.py --sweeps timing_error,measurement_noise
 python experiments/run_ablation.py              # ablation only
 python experiments/plot_results.py --out results/main   # regenerate all figures from the CSV files
@@ -184,7 +186,7 @@ with `configs/starlink_like.yaml` (1584 satellites, UE at 49.6° N, 20 seeds × 
 suburban TR 38.811 environment, σ_meas = 1 dB, execution delay 0.15 s); CSV files, figures and
 `provenance_*.json` are in `results/main/`. Mean ± 95 % CI over seeds; paired differences and p-values in
 `results/main/csv/comparison_paired.csv`. Rule parameters are the defaults of the configuration (chosen
-*before* the tuning grids were run); §11.4 reports tuned settings for both A3 and the proposed rule.
+*before* the tuning grids were run); §11.3 reports tuned settings for both A3 and the proposed rule.
 
 ### 11.1 Main comparison (Fig. 2) and ablation (Fig. 4)
 
@@ -216,19 +218,23 @@ suburban TR 38.811 environment, σ_meas = 1 dB, execution delay 0.15 s); CSV fil
 
 <p align="center"><img src="results/main/figures/fig4_ablation.png" width="90%"></p>
 
-### 11.2 Sensitivity (Fig. 3a–f)
+### 11.2 Robustness to imperfect prediction (Fig. 3)
 
-| sweep | finding |
-|---|---|
-| **ephemeris timing error** −20 … +20 s (≈ ±150 km along-track) — `fig3_sensitivity_timing_error.png` | P is essentially unaffected (outage 0.50–0.55 %, 61–63 HO/h); its utility is dominated by SNR levels, which the bias correction re-anchors to the measurements, and the mask crossing coincides with the minimum SNR of a pass. The ephemeris-only rule C is **asymmetric**: with late predictions (ε ≤ −5 s) it makes no handover at all and every satellite change becomes a link loss (47/h); with early predictions it hands over too early (HO failures 4–12 %). P without correction degrades similarly (link losses 29–33/h). **H2 confirmed** — more strongly than expected. |
-| **measurement noise** 0–4 dB — `fig3_sensitivity_measurement_noise.png` | P: 61 → 66 HO/h, outage 0.52 → 0.53 %; A3: 235 → 1104 HO/h, outage 1.2 → 4.8 %; greedy explodes (11 300 HO/h, 47 % outage). The EWMA bias and the horizon average act as an additional filter. |
-| **execution delay** 0.05–2 s — `fig3_sensitivity_ho_delay.png` | Outage grows for every rule (P: 0.33 → 3.6 %, A3: 0.58 → 14.3 %). Because C hands over only 9.5 ×/h, its outage stays at ≈ 2 % and it **overtakes P somewhere between 1 and 2 s of execution delay** (1.9 % vs 2.0 % at 1 s, 3.6 % vs 2.3 % at 2 s). **H4 confirmed** with this caveat: at extreme delays the fewest-handover rule wins. |
-| **horizon** T_h = 0–80 s — `fig3_sensitivity_horizon.png` | Handovers fall monotonically with the horizon (83.5 → 51.5/h) and ping-pong reaches 0 at 80 s, but outage rises (0.45 → 0.80 %) and link losses appear beyond 40 s (1.2–5.2/h): a long horizon makes the rule sluggish against unpredictable blockage. 5–20 s is the useful range. |
-| **environment** suburban / urban / dense urban — `fig3_sensitivity_environment.png` | With LOS probabilities of 25–60 % all rules degrade: P outage 0.50 → 2.4 → 5.2 % with 61 → 199 → 417 HO/h, A3 1.3 → 7.4 → 7.9 % with 264 → 1235 → 1091 HO/h; C collapses (166–322 link losses/h, 6.7–14 % outage). P keeps ≈ 3 × lower outage than A3 at 4–6 × fewer handovers; the SE proxies become equal (4.93 vs 4.99, 4.87 vs 4.87). |
-| **constellation size** 576 / 792 / 1584 satellites (7 / 10 / 19.5 candidates) — `fig3_sensitivity_density.png` | P is flat (69 / 66 / 61 HO/h, 0.58 / 0.56 / 0.50 % outage); A3 handovers grow with the number of candidates (191 → 264/h) while its ping-pong falls (0.17 → 0.10); greedy worsens with density. |
+The research question's second half is whether the rule survives *imperfect* prediction. The
+ephemeris was therefore shifted in time by ε = −20 … +20 s (≈ ±150 km along-track, far beyond what fresh
+SIB19 ephemeris would show), same seeds at every level (`fig3_sensitivity_timing_error.png`):
+
+* **P is essentially unaffected** (outage 0.50–0.55 %, 61–63 HO/h): its utility is dominated by SNR
+  levels, which the bias correction re-anchors to the measurements every 0.2 s.
+* The ephemeris-only rule C is **asymmetric**: with late predictions (ε ≤ −5 s) it makes no handover at
+  all and every satellite change becomes a link loss (47/h); with early predictions it hands over too
+  early (handover failures 4–12 %). P *without* correction degrades similarly (link losses 29–33/h).
+  **H2 confirmed** — more strongly than expected.
+* Measurement noise (σ = 0 … 4 dB, `fig3_sensitivity_measurement_noise.png`) tells the same story from
+  the other side: A3 goes from 235 to 1104 HO/h and from 1.2 to 4.8 % outage, while P moves from 61 to
+  66 HO/h at 0.52–0.53 % outage — the horizon average and the EWMA bias act as an additional filter.
 
 <p align="center"><img src="results/main/figures/fig3_sensitivity_timing_error.png" width="90%"></p>
-<p align="center"><img src="results/main/figures/fig3_sensitivity_ho_delay.png" width="90%"></p>
 
 ### 11.3 Tuning grids (Fig. 5) — a fairer comparison
 
@@ -258,18 +264,11 @@ handovers — margin and cap must be tuned jointly.
 
 * Throughput: with the default cap P trades ≈ 3 % of the SE proxy for stability; a higher cap recovers it
   (§11.3) at the price of more handovers.
-* Very long execution delays (between 1 and 2 s) favour the fewest-handover rule C on outage.
 * Look-ahead reduces handovers but slightly increases outage; blockage robustness comes from the
   measurement feedback, not from prediction.
 * Decision cost: P needs ≈ 110 µs per decision in Python versus 5–6 µs for A3/greedy (≈ 20 ×, still
   negligible against a 200-ms decision period; no training).
 * All KPIs are proxies of a simplified model without interference or protocol procedures (§12).
-
-### 11.5 Hypotheses
-
-H1 supported (handovers, ping-pong, outage at default settings; throughput only after re-tuning);
-H2 supported (robust to ±20 s timing error, in contrast to ephemeris-only rules); H3 supported
-(ablation and environment sweep); H4 supported with the delay crossover caveat.
 
 ## 12. Limitations
 
